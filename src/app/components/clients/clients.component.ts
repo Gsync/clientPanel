@@ -13,7 +13,6 @@ export class ClientsComponent implements OnInit {
   constructor(private clientService: ClientService) {
     this.clientService.getClients().subscribe(clients => {
       this.clients = clients;
-      console.log(clients);
     });
   }
 
