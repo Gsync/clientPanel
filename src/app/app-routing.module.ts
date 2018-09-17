@@ -24,15 +24,6 @@ const routes: Routes = [
 @NgModule({
   exports: [RouterModule],
   imports: [RouterModule.forRoot(routes)],
-  declarations: [
-    DashboardComponent,
-    LoginComponent,
-    RegisterComponent,
-    AddClientComponent,
-    EditClientComponent,
-    ClientDetailsComponent,
-    SettingsComponent,
-    NotFoundComponent
-  ]
+  declarations: []
 })
 export class AppRoutingModule {}
