@@ -7,9 +7,9 @@
   <div class="col-md-6"></div>
 </div>
 <div class="card">
-  <div class="card-header">Add Client</div>
+  <div class="card-header">Add New Client</div>
   <div class="card-body">
-    <form #clientForm="ngForm">
+    <form #clientForm="ngForm" (ngSubmit)="onSubmit(clientForm)">
       <div class="form-group">
         <label for="firstName">First Name</label>
         <input type="text" class="form-control" name="firstName" #clientFirstName="ngModel" [ngClass]="{'is-invalid': clientFirstName.errors && clientFirstName.touched}"
@@ -35,7 +35,6 @@
         <label for="phone">Phone</label>
         <input type="text" class="form-control" name="phone" #clientPhone="ngModel" [ngClass]="{'is-invalid': clientPhone.errors && clientPhone.touched}"
           [(ngModel)]="client.phone" minlength="10" required>
-        <h3>{{clientPhone.invalid}}</h3>
         <div [hidden]="!clientPhone.errors?.required" class="invalid-feedback">Phone required</div>
         <div [hidden]="!clientPhone.errors?.minlength" class="invalid-feedback">Must be atleast 10 characters</div>
       </div>
