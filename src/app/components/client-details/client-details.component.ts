@@ -32,7 +32,13 @@ export class ClientDetailsComponent implements OnInit {
       this.client = client;
     });
   }
-  onDelete() {
-    
+
+  updateBalance() {
+    this.clientService.updateClient(this.client);
+    this.showBalanceUpdateInput = false;
+    this.flashMessage.show('Balance updated!', {
+      cssClass: 'alert-success'
+    });
   }
+  onDelete() {}
 }
