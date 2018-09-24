@@ -40,5 +40,13 @@ export class ClientDetailsComponent implements OnInit {
       cssClass: 'alert-success'
     });
   }
-  onDelete() {}
+  onDelete() {
+    if (confirm('Are you sure, you want to delete client?')) {
+      this.clientService.deleteClient(this.client);
+      this.flashMessage.show('Client deleted!', {
+        cssClass: 'alert-success'
+      });
+      this.router.navigate(['/']);
+    }
+  }
 }
