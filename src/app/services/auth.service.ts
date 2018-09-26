@@ -16,4 +16,7 @@ export class AuthService {
   getAuth() {
     return this.angularfireAuth.authState;
   }
+  logout() {
+    this.angularfireAuth.auth.signOut();
+  }
 }
