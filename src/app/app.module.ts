@@ -21,6 +21,7 @@ import { EditClientComponent } from './components/edit-client/edit-client.compon
 import { ClientDetailsComponent } from './components/client-details/client-details.component';
 import { SettingsComponent } from './components/settings/settings.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
+import { AuthService } from './services/auth.service';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,7 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
     AngularFirestoreModule,
     FlashMessagesModule.forRoot()
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
