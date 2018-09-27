@@ -13,6 +13,13 @@ export class AuthService {
         .then(userData => resolve(userData), error => reject(error));
     });
   }
+  register(email: string, password: string) {
+    return new Promise((resolve, reject) => {
+      this.angularfireAuth.auth
+        .createUserWithEmailAndPassword(email, password)
+        .then(userData => resolve(userData), error => reject(error));
+    });
+  }
   getAuth() {
     return this.angularfireAuth.authState;
   }
